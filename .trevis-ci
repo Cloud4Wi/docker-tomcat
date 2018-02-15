@@ -8,13 +8,10 @@ install:
     - git clone https://github.com/docker-library/official-images.git official-images
 
 
-before_script:
+script:
     - image="logocomune/tomcat"
     - docker build -t "$image" .
-    - docker inspect "$image"
-
-script:
-    - official-images/test/run.sh "$image" --help
+    - docker inspect "$image
 
 after_script:
     - docker images
